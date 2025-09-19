@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
+    <title>Quote Finder</title>
+</head>
+<body>
+    
+    <h1 class="bg-danger p-4 text-center text-white"> Quote Finder </h1>
+
+    <br>
+
+    <div class="m-4">
+
+        <form action="/searchByKeyword">
+            <input name="keyword" type="text">
+            <button class="btn btn-outline-success">Search by Keyword</button>
+        </form>
+    </div>
+
+    <%
+
+    let dobFormatted = rows[0].dob.toISOString().slice(0, 10);
+
+    let dob = rows[0].dob.toLocaleDateString();
+    %>
+    
+    <%=dob%>
+
+    <input type="date" value="<%=dobFormatted%>">
+
+    <form id="form1">
+        <button>click</button>
+    </form>
+
+    <script>
+        document.querySelector("#form1").addEventListener("submit",validateForm);
+
+        function validateForm(e){
+            alert("here")
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>
