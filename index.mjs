@@ -26,7 +26,7 @@ app.get('/', async (req, res) => {
     FROM authors
     WHERE authorId = 1 `;
     const [rows] = await conn.query(sql);
-   res.render('home.ejs', {rows})
+   res.render('home.ejs', {rows});
 });
 
 //api to get all the info for a specific author
